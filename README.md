@@ -1,80 +1,111 @@
-# Traditional Cryptography — Transposition Ciphers
+# Motor Imagery EEG Event Detection
 
-Welcome to the **Transposition Ciphers** repository! This project implements classical **transposition cipher techniques**, a foundational category of traditional cryptography where the positions of characters in the plaintext are rearranged to generate ciphertext while keeping the characters unchanged.
+This repository contains implementations for **motor imagery EEG event detection** using classical feature extraction, feature selection, and machine learning techniques. The project focuses on detecting motor imagery events from EEG signals, which is a fundamental task in **Brain–Computer Interface (BCI)** research.
 
-Transposition ciphers are historically significant and provide essential insight into early encryption mechanisms that preceded modern cryptographic systems.
+The work demonstrates how signal processing and machine learning methods can be applied to EEG data to identify meaningful brain activity patterns related to imagined motor movements.
 
 ---
 
-## 📌 Overview
+## 📌 Project Overview
 
-This repository contains implementations of several **transposition cipher methods**, including both keyless and key-based approaches. The goal of this project is to demonstrate the working principles of classical cryptographic algorithms in a clear and educational manner.
+Motor imagery EEG signals are widely used in BCI systems to enable communication and control without physical movement. This project implements a complete pipeline that includes:
 
-Implemented ciphers include:
+- EEG feature extraction (time and frequency domain)
+- Feature selection using statistical and heuristic methods
+- Classification using Support Vector Machine (SVM)
+- Performance evaluation using standard metrics
 
-- **Keyless Transposition Cipher**
-- **Keyed Transposition Cipher**
-- **Columnar Transposition Cipher**
-
-Each cipher is implemented using **Python** and provided in **Jupyter Notebook** format for better readability, experimentation, and learning.
+An average **F1-score of approximately 68.69%** was achieved using the selected features and SVM classifier.
 
 ---
 
 ## 📂 Repository Structure
 
 ```
-Traditional_Cryptography---Transposition_Ciphers/
-├── Keyless_Transposition_Cipher.ipynb
-├── Keyed_Transposition_Cipher.ipynb
-├── Columnar_Transposition_Cipher.ipynb
+Motor-imagery-eeg-event-detection/
+├── Evaluate.m
+├── confusionmatStats.m
+├── feat_extract.m
+├── feat_sel.m
+├── ffs.m
+├── trainClassifier.m
+├── train_test_evaluate.m
 ├── README.md
 └── LICENSE
 ```
+
+### File Description
+
+- **feat_extract.m** — Extracts time- and frequency-domain EEG features  
+- **feat_sel.m** — Performs feature selection using MRMR  
+- **ffs.m** — Forward Feature Selection implementation  
+- **trainClassifier.m** — Trains the SVM classifier  
+- **train_test_evaluate.m** — End-to-end training and testing pipeline  
+- **Evaluate.m / confusionmatStats.m** — Performance evaluation metrics  
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Requirements
 
-- Python 3.7+
-- Jupyter Notebook or JupyterLab
-
----
-
-### Installation & Usage
-
-```bash
-git clone https://github.com/YeamimHossain/Traditional_Cryptography---Transposition_Ciphers.git
-cd Traditional_Cryptography---Transposition_Ciphers
-jupyter notebook
-```
+- **MATLAB** (recommended R2018a or later)
+- EEG dataset formatted according to the scripts (dataset path must be set manually)
 
 ---
 
-## 🧪 Features
+### How to Run
 
-- Clear algorithm explanation
-- Encryption and decryption implementation
-- Example inputs and outputs
-- Educational comments and notes
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YeamimHossain/Motor-imagery-eeg-event-detection.git
+   ```
+
+2. Open the project folder in MATLAB.
+
+3. Set dataset paths as required in the scripts.
+
+4. Run the pipeline:
+   - Feature extraction → `feat_extract.m`
+   - Feature selection → `feat_sel.m`
+   - Training & testing → `train_test_evaluate.m`
 
 ---
 
-## 📖 Educational Purpose
+## 📈 Performance
 
-Transposition ciphers rearrange plaintext characters without altering them, forming the basis of many early cryptographic systems. This repository is designed for students, educators, and cryptography enthusiasts.
+- Classifier: **Support Vector Machine (SVM)**
+- Feature selection: **MRMR + Forward Feature Selection**
+- Evaluation metric: **F1-score**
+- Average performance: **~68.69% F1-score**
+
+---
+
+## 🧠 Applications
+
+This work is applicable to:
+
+- Brain–Computer Interfaces (BCIs)
+- Assistive technologies for motor-impaired individuals
+- EEG signal processing research
+- Cognitive neuroscience experiments
 
 ---
 
 ## 🔮 Future Work
 
-- Additional classical cipher implementations
-- Cryptanalysis demonstrations
-- Command-line versions
+- Deep learning–based motor imagery classification
+- Cross-subject generalization
+- Real-time BCI implementation
+- Dataset expansion and benchmarking
 
 ---
 
 ## 📝 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License**.  
+See the `LICENSE` file for details.
+
+---
+
+⭐ If you find this repository useful, please consider starring it!
